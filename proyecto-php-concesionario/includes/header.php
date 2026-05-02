@@ -13,7 +13,7 @@
             <li><a href="index.php">Inicio</a></li>
             <li><a href="galeria.php">Galería</a></li>
             <li><a href="inventario.php">Inventario</a></li>
-            <li><a href="formulario.php">Formulario</a></li>
+            <li><a href="cita.php">Cita</a></li>
         </ul>
     </nav>
     
