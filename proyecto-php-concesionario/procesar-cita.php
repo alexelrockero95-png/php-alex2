@@ -10,7 +10,7 @@ require __DIR__ . "/db.php";
 try {
     $sql = "INSERT INTO citas_taller (id, nombre, email, coches)VALUES (?,?,?,?)";
     $stmt = $pdo->prepare($sql);
-    $result = $stmt->execute([null, $nombre_cliente, $email, $coche_interes]);
+    $result = $stmt->execute([$id, $nombre_cliente, $email, $coche_interes]);
 
     // 5. Mostrar éxito
     if ($result) {
