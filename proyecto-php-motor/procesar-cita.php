@@ -1,14 +1,6 @@
-<?php
-// 1. Comprobar método POST
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    echo "No s'han rebut dades del formulari.";
-    exit;
-}
-
-// 2. Recoger variables
-$nom = $_POST["nom"] ?? "";
-$telefon = $_POST["telefon"] ?? "";
+$nombre_cliente = $_POST["nombre_cliente"] ?? "";
 $email = $_POST["email"] ?? "";
+$coche_interes = $_POST["coche_interes"] ?? "";
 $missatge = $_POST["missatge"] ?? "";
 
 // 3. Conexión a BD
@@ -16,9 +8,9 @@ require __DIR__ . "/db.php";
 
 // 4. Insertar datos con Prepared Statements
 try {
-    $sql = "INSERT INTO contactos (nombre, telefono, correo, mensaje) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO citas_taller (nombre, email, coches)VALUES (?,?,?,)";
     $stmt = $pdo->prepare($sql);
-    $result = $stmt->execute([$nom, $telefon, $email, $missatge]);
+    $result = $stmt->execute([$nombre_cliente, $email, $coche_interes]);
 
     // 5. Mostrar éxito
     if ($result) {
@@ -31,4 +23,3 @@ try {
     echo "Error: " . $e->getMessage();
 }
 ?>
-
