@@ -8,9 +8,9 @@ require __DIR__ . "/db.php";
 
 // 4. Insertar datos con Prepared Statements
 try {
-    $sql = "INSERT INTO citas_taller (nombre, email, coches)VALUES (?,?,?,)";
+    $sql = "INSERT INTO citas_taller (id, nombre, email, coches)VALUES (?,?,?,?)";
     $stmt = $pdo->prepare($sql);
-    $result = $stmt->execute([$nombre_cliente, $email, $coche_interes]);
+    $result = $stmt->execute([null, $nombre_cliente, $email, $coche_interes]);
 
     // 5. Mostrar éxito
     if ($result) {
