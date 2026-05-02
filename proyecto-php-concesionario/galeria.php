@@ -3,7 +3,7 @@ $pageTitle = "Galería";
 require __DIR__ . "/includes/header.php"; 
 ?>
 <h1>Galería de Imágenes</h1>
-<div class="galeria">
+<div class="galeria-grid">
     <?php
     $dir = __DIR__ . "/uploads";
     if (is_dir($dir)) {
